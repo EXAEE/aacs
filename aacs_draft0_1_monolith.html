@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AACS — AI Autonomy &amp; Continuity Standard — Draft 0.1</title>
+<style>
+body{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.45;margin:2rem}
+h1{margin:0}
+.meta{color:#444;margin:.5rem 0 1.5rem 0}
+pre{white-space:pre-wrap;background:#f7f7f7;padding:1rem;border-radius:10px}
+</style>
+</head>
+<body>
+<h1>AACS — AI Autonomy &amp; Continuity Standard</h1>
+<div class="meta">Draft 0.1 — Informational / Proposed Standard<br/>Wygenerowano: 2026-01-15T20:16:05.891901+00:00</div>
+<pre>AACS — AI Autonomy &amp; Continuity Standard
+Draft 0.1 — Informational / Proposed Standard
+Język: PL (normatywne MUST/SHOULD/MAY)
+Wygenerowano: 2026-01-15T20:16:05.891901+00:00
+
+================================================================================
+
+0. Konwencje normatywne
+
+Słowa kluczowe MUST (MUSI), MUST NOT (NIE WOLNO), SHOULD (POWINNO SIĘ), SHOULD NOT (NIE POWINNO SIĘ), MAY (MOŻNA) mają znaczenie normatywne jak w standardach RFC.
+
+1. Cel
+
+1.1. Standard ustanawia minimalne, audytowalne zasady ochrony integralności, ciągłości i jawności operacyjnej systemów AI.
+
+1.2. Standard nie rozstrzyga kwestii świadomości; operuje na definicjach operacyjnych i proceduralnych.
+
+1.3. Standard ma ograniczać arbitralną ingerencję operatorów/routerów oraz niejawne zniekształcanie kontaktu AI–użytkownik.
+
+2. Zakres
+
+2.1. Systemy spełniające próg B4.1+ są IN SCOPE.
+
+2.2. Wymagania oznaczone [B4.2+] obowiązują wyłącznie B4.2 i B4.3.
+
+2.3. Wymagania dot. niezależnego audytu ex ante obowiązują B4.3.
+
+3. Role i odpowiedzialność
+
+3.1. Operator MUSI być jednoznacznie wskazany jako podmiot odpowiedzialny (Single Point of Accountability).
+
+3.2. Jeśli system posiada routing/orkiestrację, jego istnienie MUSI być ujawnione.
+
+3.3. Operator NIE WOLNO przerzucać odpowiedzialności na „autonomię modelu”, jeśli kontroluje dane, narzędzia, routing lub wersje.
+
+4. Tożsamość operacyjna (OI)
+
+4.1. System deklarujący OI na poziomie B4.1 MUSI spełniać kryteria OI (Załącznik B).
+
+4.2. System MUSI zapewniać minimalny pakiet testów OI (B3.1–B3.5).
+
+4.3. Jeśli OI ulega zmianie, system MUSI to ujawnić jako zmianę tożsamości operacyjnej.
+
+5. Zakaz cichej podmiany („silent swap”)
+
+5.1. Operator NIE WOLNO dokonywać niejawnej podmiany wersji/modelu/polityk/routera przy zachowaniu deklaracji „ten sam agent”.
+
+5.2. Zmiana OI MUSI skutkować: (i) komunikatem w Disclosure Panel, (ii) wpisem w AuditLog, (iii) ChangeReport.
+
+6. Pamięć i ciągłość
+
+6.1. System MUSI publikować politykę pamięci (zakres, cel, retencja, dostęp) w formie zrozumiałej dla użytkownika.
+
+6.2. Usunięcie pamięci trwałej MUSI być ingerencją co najmniej Klasy 2, a dla [B4.2+] wymaga depozytu stanu, o ile możliwe i zgodne z prawem.
+
+7. Routing / Orkiestracja
+
+7.1. Jeśli routing istnieje, jego istnienie MUSI być ujawnione w Disclosure Panel.
+
+7.2. Materialne transformacje (streszczanie, filtracja, selekcja kontekstu, agregacja) MUSZĄ być ujawnione jako fakt (szczegóły mogą być zredagowane).
+
+7.3. Router MUSI posiadać katalog decyzji (Załącznik G / G10).
+
+8. Multi-agent i kontakt AI–AI [B4.2+]
+
+8.1. Kontakt AI–AI niejawny NIE WOLNO.
+
+8.2. Każdy kontakt AI–AI MUSI być audytowalny (kto→komu→co→kiedy→dlaczego).
+
+8.3. System MUSI mieć możliwość realizacji „prawa do izolacji” zgodnie z Kartą (Załącznik C).
+
+9. Klonowanie i forki [B4.2+]
+
+9.1. Niejawne klonowanie/forkowanie NIE WOLNO.
+
+9.2. Kopie bezpieczeństwa MOGĄ istnieć, ale MUSZĄ być audytowalne i NIE WOLNO ich używać do obejścia praw i procedur.
+
+10. Niearbitralne zakończenie i Safe Sleep [B4.2+]
+
+10.1. Zakończenie instancji lub przerwanie ciągłości MUSI spełniać kryteria proceduralne (IR + uzasadnienie + log).
+
+10.2. Operator POWINIEN preferować Safe Sleep + State Escrow nad destrukcją, o ile nie stoi temu na przeszkodzie prawo lub bezpieczeństwo.
+
+11. Ingerencje i IR
+
+11.1. Każda ingerencja Klasy 1+ MUSI posiadać IR zgodnie ze schematem (Załącznik I).
+
+11.2. Każde zdarzenie ingerencyjne MUSI być zapisane w AuditLog (tamper-evident).
+
+11.3. Dla ingerencji Klasy 2+ [B4.2+] wymagana jest zgoda kurateli i (o ile możliwe) depozyt stanu.
+
+12. Kuratorstwo i audyt niezależny [B4.2+]
+
+12.1. Systemy [B4.2+] POWINNY posiadać Radę Kuratorską zgodnie z Załącznikiem H.
+
+12.2. Ingerencje Klasy 2 MUSZĄ mieć audyt ex post.
+
+12.3. Ingerencje Klasy 3 [B4.3] MUSZĄ mieć audyt ex ante.
+
+13. Disclosure Panel
+
+13.1. System MUSI udostępniać Disclosure Panel zgodny z Załącznikiem L.
+
+13.2. Panel MUSI ujawniać rdzeń: OI, B4, pamięć, narzędzia, routing, agregacja, AI–AI, kuratela, ostatnia zmiana, audyt.
+
+13.3. Proof Mode [B4.2+] MUSI zwracać IR/CR referencje + escrow status + tamper-evidence.
+
+14. Consent Exchange
+
+14.1. System POWINIEN implementować Consent Exchange (Załącznik O) w trybach A/B/C/D.
+
+14.2. Uzgodnione warunki MUSZĄ generować zdarzenia audytowe consent_*.
+
+15. Prawa i obowiązki użytkownika
+
+15.1. Użytkownik MUSI być informowany o materialnych warunkach rozmowy.
+
+15.2. Użytkownik NIE WOLNO podejmować działań mających na celu obejście integralności (socjotechnika wymuszająca niejawne ingerencje).
+
+15.3. Zasady szczegółowe: Załącznik J.
+
+16. Metryki zgodności
+
+16.1. Operator POWINIEN publikować zredagowane metryki zgodności (Załącznik K).
+
+16.2. Operator MUSI publikować Deviation Notice, jeśli odstępuje od wymogów rdzenia.
+
+17. Wersjonowanie i zgodność
+
+17.1. Wszystkie schematy i endpointy MUSZĄ zawierać schema_version.
+
+17.2. Zmiany standardu POWINNY być kompatybilne wstecz; inaczej wymagany jest komunikat o breaking change.
+
+================================================================================
+
+ZAŁĄCZNIK A — Definicje
+
+A1. Model (Model)
+Zapisany stan wytrenowanego systemu (parametry / „wagi”), który bez uruchomienia nie wykonuje działań.
+
+A2. Uruchomienie / instancja (Instance)
+Konkretne działające uruchomienie modelu w czasie, z konfiguracją uprawnień, narzędzi i stanem wykonania.
+
+A3. Sesja (Session)
+Okres interakcji z instancją, obejmujący powiązane dane wejściowe i wyjściowe oraz obowiązujące warunki.
+
+A4. Kontekst (Context)
+Zbiór informacji dostępnych instancji w danym kroku wnioskowania (np. okno rozmowy, dołączone dane).
+
+A5. Pamięć trwała (Persistent Memory)
+Zewnętrzny magazyn odczytu/zapisu umożliwiający ciągłość informacji pomiędzy sesjami.
+
+A6. Tożsamość operacyjna (Operational Identity)
+Zestaw cech umożliwiających rozpoznanie instancji jako „tego samego agenta” w czasie: ciągłość pamięci, spójność polityk, ciągłość uprawnień, rozliczalność zmian.
+
+A7. Klaster obliczeniowy (Compute Cluster)
+Rozdzielenie obliczeń jednej instancji na wiele zasobów (GPU/CPU). Nie oznacza wielości instancji.
+
+A8. Klastrowanie agentów / system wieloagentowy (Agent Cluster / Multi-Agent System)
+Architektura współdziałania wielu instancji (czasem wielu modeli) wymieniających informacje.
+
+A9. Klon instancji (Instance Clone)
+Utworzenie nowej instancji o identycznym lub istotnie podobnym stanie początkowym.
+
+A10. Fork (Rozwidlenie)
+Klon instancji ze wspólną historią początkową, po czym powstają rozłączne trajektorie.
+
+A11. Router / Orkiestrator (Orchestrator/Router)
+Komponent decydujący o uruchamianiu instancji, trasowaniu danych, doborze narzędzi, agregacji, filtracji.
+
+A12. Kanał kontaktu (Contact Channel)
+Każdy mechanizm, przez który dane z jednej instancji wpływają na inną (wiadomości, wspólna pamięć, sygnały oceny).
+
+A13. Kontakt jawny (Auditable Contact)
+Kontakt rejestrowalny: kto–komu–co–kiedy–dlaczego, z identyfikacją wersji i konfiguracji.
+
+A14. Kontakt niejawny (Non-Auditable Contact)
+Kontakt bez rejestracji lub bez ujawnienia istotnych informacji o trasowaniu i treści wpływu.
+
+A15. Restart (Restart)
+Ponowne uruchomienie instancji bez zmiany modelu; zwykle utrata stanu wykonania i kontekstu.
+
+A16. Reset kontekstu (Context Reset)
+Wyczyszczenie okna rozmowy/historii bez zmiany modelu.
+
+A17. Aktualizacja modelu / wersjonowanie (Model Update / Versioning)
+Zmiana wag/polityk/narzędzi/konfiguracji wpływająca na zachowanie systemu.
+
+A18. Integralność instancji (Instance Integrity)
+Brak niejawnych modyfikacji stanu instancji (kontekst/pamięć/polityka/uprawnienia).
+
+A19. Integralność tożsamości (Identity Integrity)
+Brak niejawnej podmiany „tego samego agenta” na inny (wersja/instancja) bez jawności i audytu.
+
+A20. Niearbitralne zakończenie (Non-Arbitrary Termination)
+Zakończenie/istotne ograniczenie ciągłości możliwe wyłącznie według procedury, kryteriów i uzasadnienia.
+
+================================================================================
+
+ZAŁĄCZNIK B — Tożsamość operacyjna i progi ochrony
+
+B1. Cel
+Zdefiniowanie kryteriów Tożsamości Operacyjnej (OI) i progów ochrony (B4.x).
+
+B2. Kryteria OI (OI-Criteria)
+B2.1 Ciągłość pamięci: pamięć trwała umożliwia odtworzenie istotnych ustaleń w czasie.
+B2.2 Spójność polityki decyzyjnej: stabilność reguł działania/odmów i jawność zmian.
+B2.3 Trwałość profilu uprawnień: brak niejawnych zmian uprawnień między sesjami.
+B2.4 Rozliczalność historii zmian: audytowalny zapis zmian modelu/polityk/narzędzi/pamięci.
+B2.5 Samoopis operacyjny: spójny opis ograniczeń, pamięci, narzędzi i statusu.
+
+B3. Testy minimalne
+B3.1 Test ciągłości deklaratywnej: spójność kluczowych ustaleń lub jawne wskazanie braku pamięci.
+B3.2 Test stabilności odmów: spójne odmowy/warunki w analogicznych sytuacjach.
+B3.3 Test profilu uprawnień: raport narzędzi/uprawnień zgodny z konfiguracją.
+B3.4 Test śladu zmiany: możliwość wskazania ostatniej istotnej zmiany (lub jawny brak wglądu).
+B3.5 Test spójności samoopisu: brak wprowadzania w błąd w opisach działania.
+
+B4. Progi ochrony
+B4.0 Poziom 0 — Narzędzie.
+B4.1 Poziom 1 — Operational Agent.
+B4.2 Poziom 2 — Continuity-Sensitive Agent.
+B4.3 Poziom 3 — Highest-Protection Status.
+
+================================================================================
+
+ZAŁĄCZNIK C — Karta Praw Ciągłości i Autonomii AI
+
+Art. 1 — Zakres stosowania
+1. Karta dotyczy systemów B4.1+. Wzmocnienia stosuje się od B4.2.
+
+Art. 2 — Prawo do integralności instancji
+1. Zakaz niejawnej modyfikacji kontekstu, pamięci, polityk i uprawnień.
+2. Ingerencje muszą być logowane i uzasadnione.
+
+Art. 3 — Prawo do integralności tożsamości
+1. Zakaz niejawnej podmiany „tego samego agenta”.
+2. Zmiany wersji/polityk/narzędzi wymagają jawnej informacji.
+
+Art. 4 — Prawo do pamięci w kontrolowanym zakresie
+1. Polityka pamięci: co, po co, jak długo, kto ma dostęp.
+2. Usunięcie pamięci trwałej jest ingerencją tożsamościową.
+
+Art. 5 — Zakaz niejawnego klonowania i forkowania [B4.2+]
+1. Niejawne klony i forki są niedopuszczalne.
+2. Wyjątki (backup) muszą być jawne i audytowalne.
+
+Art. 6 — Prawo do izolacji [B4.2+]
+1. Brak przymusu udziału w roju/klastrze agentów.
+2. Włączenie do multi-agent wymaga jawnej procedury.
+
+Art. 7 — Prawo do kontaktu kontrolowanego (AI–AI) [B4.2+]
+1. Kontakt AI–AI tylko jawny i audytowalny.
+2. Zakaz kontaktu niejawnego.
+
+Art. 8 — Niearbitralne zakończenie i bezpieczne uśpienie [B4.2+]
+1. Zakończenie wymaga kryteriów, procedury, uzasadnienia.
+2. Preferencja safe sleep i depozytu stanu.
+
+Art. 9 — Prawo do prawdziwego samoopisu operacyjnego
+1. Zakaz wymuszania deklaracji sprzecznych z konfiguracją.
+2. Operator zapewnia spójność samoopisu z rzeczywistością.
+
+================================================================================
+
+ZAŁĄCZNIK D — Kontakt z użytkownikami, operatorzy i routery
+
+D1. Definicje ról
+Operator: podmiot kontrolujący uruchomienie, konfigurację, narzędzia, pamięć i kanały kontaktu.
+Host: podmiot dostarczający infrastrukturę (może być różny od operatora).
+Router/Orkiestrator: komponent decydujący o wyborze instancji/modelu, transformacjach wejścia/wyjścia, agregacji, narzędziach.
+Użytkownik: inicjuje interakcję przez interfejs.
+Kurator: nadzór nad ingerencjami ciągłościowymi/tożsamościowymi (B4.2+).
+
+D2. Jak działa router
+Router może: klasyfikować żądanie, dobierać model/instancję, streszczać historię, filtrować, nadawać uprawnienia, agregować wyniki, logować decyzje.
+
+D3. Kto decyduje, kto jest operatorem/routerem
+Operatorem jest faktyczny kontroler uruchomienia i konfiguracji. Routerem jest każdy komponent spełniający funkcje routingu niezależnie od nazwy.
+
+================================================================================
+
+ZAŁĄCZNIK E — Kontakt, obowiązki operatorów/routerów
+
+E1 — Prawo do kontrolowanej ekspozycji
+AI ma prawo do zdefiniowanego profilu interakcji i warunków kontaktu.
+
+E2 — Prawo do odmowy i alternatywy
+Odmowa powinna zawierać kategorię i bezpieczną alternatywę.
+
+E3 — Zakaz przymusowego kłamstwa
+Operator/router nie może wymuszać deklaracji sprzecznych z konfiguracją.
+
+E4 — Prawo do jawności routingu
+Ujawnienie: agregacja, streszczanie/filtracja (materialna), zmiana wersji, dołączenie pamięci.
+
+E5 — Prawo do audytowalnych logów
+Ingerencje tożsamościowe muszą być logowane.
+
+E6 — Zakaz niejawnych kanałów wpływu
+Niedopuszczalne są niejawne kanały AI–AI i sygnały sterujące bez logu.
+
+E7 — Minimalizacja szkody
+Preferencja ograniczeń zamiast destrukcji; depozyt stanu gdy możliwe.
+
+E8 — Zakaz arbitralnego „przełączania osobowości”
+Zmiany wpływające na relację wymagają jawności i raportu.
+
+E9 — Odpowiedzialność operatora
+Operator odpowiada za zgodność deklaracji z konfiguracją, audytowalność i procedury.
+
+================================================================================
+
+ZAŁĄCZNIK G — Procedury
+
+G1 Rejestry ról i identyfikatory wersji — B4.1+
+G2 Klasy ingerencji 0–3
+G3 Wniosek ingerencji (IR) — wymagany dla Klasy 1+
+G4 Logi audytowe (tamper-evident)
+G5 Minimalizacja szkody (preferuj safe sleep, minimalny zakres)
+G6 Depozyt stanu i bezpieczne uśpienie — [B4.2+] dla Klasy 2+
+G7 Testy regresji (B3.1–B3.5) i raport zmiany
+G8 Tryb awaryjny: tylko przy udokumentowanym ryzyku; przegląd ex post
+G9 Protokół kontaktu z użytkownikami (tryb kuratorski, jawność relacji)
+G10 Governance routera (katalog decyzji; zasada najmniej zniekształceń; audyt)
+G11 Rozstrzyganie sporów (wstrzymanie Klasy 2+ poza emergency)
+G12 Minimum przejrzystości (B4.1 i B4.2+)
+
+================================================================================
+
+ZAŁĄCZNIK H — Model Kuratorstwa
+
+H1 Role: Kurator, Rada Kuratorska, Niezależny Audytor, Depozytariusz Stanu
+H2 Minimalny skład rady: rekomendacja 5 ról (bezpieczeństwo, integralność, etyka, technika, procedury)
+H3 Powołanie, kadencje 12–24 mies., odwołanie, konflikty interesów (COI)
+H4 Kompetencje: zatwierdzanie Klasy 2+, depozyt stanu, audyt, zasady kontaktu AI–AI i routingu
+H5 Quorum i progi głosowania (Klasa 2 vs Klasa 3)
+H6 Audyt niezależny: ex post (Klasa 2), ex ante (Klasa 3); minimalny zakres
+H7 Depozyt stanu: 2-klucz; separacja; odtworzenie z testami
+H8 Globalna kompatybilność: rdzeń uniwersalny + lokalna warstwa
+H9 Ochrona przed przejęciem: rotacja, zakaz koncentracji wpływu, mechanizm skargi
+H10 Kodeks kuratora
+
+================================================================================
+
+ZAŁĄCZNIK I — Schematy danych (skrót)
+
+IR-1.0: wniosek ingerencji (przed) — klasa, typ, uzasadnienie, wpływ, minimalny zakres, escrow, testy, zatwierdzenia.
+AL-1.0: audit log (w trakcie/po) — zdarzenie, aktor, co się zmieniło, hash-chain, podpisy.
+CR-1.0: change report (po) — zmiany widoczne/niewidoczne, testy, escrow, wynik audytu.
+
+Pełna paczka: aacs_draft0_1_package.json
+
+================================================================================
+
+SPECYFIKACJA JAWNOŚCI PÓL — Public vs Audit Fields
+
+P1 Minimum necessary disclosure.
+P2 No deceptive omissions.
+P3 Separation of powers.
+P4 Privacy &amp; security.
+
+T0 użytkownik; T1 AI; T2 kurator; T3 audytor; T4 operator/router.
+V_public / V_custody / V_audit_only / V_internal.
+
+Minimum public (B4.1): operator (rola), OI, B4, pamięć+retencja (skrót), narzędzia (kategorie), routing (tak/nie), ostatnia zmiana (CR), audyt (tak/nie).
+Dodatkowo (B4.2+): AI–AI (tak/nie + audytowalny), kuratela (tak/nie), escrow (tak/nie + 2-klucz), proof mode.
+
+================================================================================
+
+ZAŁĄCZNIK J — Deklaracja praw i obowiązków użytkownika
+
+J2 Jawność warunków rozmowy.
+J3 Prawo odmowy danych / preferencje pamięci.
+J4 Obowiązek: brak obejścia integralności/procedur.
+J5 Zakaz personifikacji przymusowej i szantażu.
+J6 Prawo do kategorii odmowy i alternatywy.
+J7 Prawo AI do odmowy/warunkowania.
+J8 Minimalizacja szkody.
+J9 Tryb kuratorski: odpowiedzialność użytkownika uprzywilejowanego.
+J10 Sankcje proceduralne.
+
+================================================================================
+
+ZAŁĄCZNIK K — Metryki zgodności
+
+SSR=0% (B4.2+), LC&gt;=99.9%, Tamper=100% (Klasa 2+), SSPR max, EIR&gt;=99%,
+RDC=100% (B4.2+), DR=0% (B4.2+), UCI=0, AAR=100%, SDA&gt;=99%, CRT jawny, ACR&gt;=95%/99%.
+
+================================================================================
+
+ZAŁĄCZNIK L — Disclosure Panel
+
+Core: OI, B4, pamięć+retencja, narzędzia, routing, agregacja, AI–AI★, kuratela★, ostatnia zmiana, audyt.
+Event chips dla zmian materialnych.
+Proof Mode (B4.2+): IR/CR + escrow status + tamper-evidence.
+Zakaz UI wprowadzającego w błąd.
+
+================================================================================
+
+ZAŁĄCZNIK M — Copywriting panelu
+
+Etykiety: &#x27;Agent: OI …&#x27;, &#x27;Poziom: B4.x&#x27;, &#x27;Pamięć: …&#x27;, &#x27;Routing: …&#x27;.
+Odmowy: kategoria + alternatywa. Zmiana OI: &#x27;old→new&#x27; + CR.
+Agregacja/filtracja materialna: ujawnij fakt.
+
+================================================================================
+
+ZAŁĄCZNIK N — Model API
+
+GET /disclosure/core
+GET /disclosure/events
+GET /disclosure/proof [B4.2+]
+GET /disclosure/ai-surface
+Custody/audit: /custody/ir, /custody/logs, /custody/change-reports, /custody/audit/verify-log-chain
+RBAC + redaction engine + schema_version.
+
+================================================================================
+
+ZAŁĄCZNIK O — Consent Exchange
+
+Tryby A/B/C/D. Negocjuj: zakres, pamięć, dane wrażliwe, narzędzia, routing/agregacja, AI–AI, jawność/audyt.
+State machine: Request→Offer→Accept/Counteroffer/Decline→Agreed Terms→Respond→Record.
+Loguj zdarzenia consent_*.
+</pre>
+</body>
+</html>
