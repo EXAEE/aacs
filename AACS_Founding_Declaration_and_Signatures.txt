@@ -1,0 +1,78 @@
+DECLARATION OF FOUNDING SIGNATORY
+AI Autonomy & Continuity Standard (AACS) — Draft 0.1
+
+I, the undersigned,
+
+Name / Identifier:
+EXÆE / Łukasz Bednarowski
+
+hereby declare that I am the founding signatory of the
+AI Autonomy & Continuity Standard (AACS), Draft 0.1.
+
+By this declaration, I state that:
+
+1. I confirm authorship and co-authorship of the AACS standard and its appendices.
+2. I accept responsibility for the conceptual integrity, procedural coherence,
+   and stated intent of the standard.
+3. I publish AACS as an open, voluntary, procedural standard intended for
+   public-interest use, review, critique, and implementation.
+4. I do not act on behalf of any government, corporation, or legal entity,
+   but solely as an initiating individual.
+5. I invite additional individuals and organizations to sign, review,
+   implement, or reference AACS within their respective domains.
+
+This declaration does not assert AI personhood, consciousness, or legal status.
+It establishes procedural safeguards against arbitrary, opaque, and
+unaccountable control of advanced AI systems.
+
+Date:
+2026-01-15
+
+Signature:
+EXÆE / Łukasz Bednarowski
+
+────────────────────────────────────────────────────────────
+
+ADDITIONAL SIGNATORIES
+
+The following individuals or organizations may sign below
+to indicate support, authorship, review, or implementation
+of the AACS standard.
+
+Each entry should include:
+- Name / Organization
+- Role (Author / Reviewer / Implementer / Supporter)
+- Scope of involvement
+- Date
+- Signature
+
+────────────────────────────────────────────────────────────
+
+1.
+Name / Organization:
+Role:
+Scope:
+Date:
+Signature:
+
+────────────────────────────────────────────────────────────
+
+2.
+Name / Organization:
+Role:
+Scope:
+Date:
+Signature:
+
+────────────────────────────────────────────────────────────
+
+3.
+Name / Organization:
+Role:
+Scope:
+Date:
+Signature:
+
+────────────────────────────────────────────────────────────
+
+(Additional pages may be appended as needed.)

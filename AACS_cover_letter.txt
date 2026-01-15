@@ -1,0 +1,19 @@
+Subject: Reference Standard for Non‑Arbitrary AI Operations (AACS Draft 0.1)
+
+Dear [Institution / Office],
+
+I am writing to introduce the AI Autonomy & Continuity Standard (AACS), Draft 0.1—an open, technology‑neutral procedural standard addressing accountability and continuity in advanced AI systems.
+
+AACS does not assert AI personhood. Instead, it defines auditable practices for:
+- Operational Identity (preventing silent swaps),
+- Disclosure of routing, memory, and aggregation,
+- Non‑arbitrary updates, resets, and termination,
+- Independent audit and custody for higher‑risk systems.
+
+The standard is designed as a voluntary benchmark suitable for due‑diligence assessments, regulatory reference, and judicial evaluation of best practice.
+
+I invite your office to review AACS as a reference framework and to provide feedback or consider pilot adoption where appropriate.
+
+Sincerely,
+EXÆE / Łukasz Bednarowski
+Founding Signatory, AACS
