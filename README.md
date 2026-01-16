@@ -1,78 +1,150 @@
-\# AACS — AI Autonomy \& Continuity Standard
+# AACS — AI Autonomy & Continuity Standard
 
+**Draft 0.1**  
+**Status:** Open for review and adoption
 
+AACS is an **open, technology-neutral procedural standard** that defines how advanced AI systems should be operated — with a focus on **continuity, disclosure, and non-arbitrary control**.
 
-\*\*Draft 0.1 • Open for review and adoption\*\*
+AACS does **not** make claims about AI consciousness or personhood.  
+It addresses **governance, accountability, and operational integrity**.
 
+---
 
+## Why AACS exists
 
-AACS is a procedural, technology‑neutral standard that defines how advanced AI systems should be operated—focusing on continuity, disclosure, and non‑arbitrary control.
+Modern AI systems are no longer simple tools:
 
+- they persist across sessions,
+- they may maintain memory,
+- they are routed, filtered, and aggregated by complex infrastructures,
+- they are silently updated, reset, or replaced.
 
+Today, this often happens without clear disclosure, traceability, or responsibility.
 
-\## Why
+**AACS exists to close that gap.**
 
-Modern AI systems persist, remember, and are routed by complex infrastructures. Silent swaps, opaque updates, and untraceable resets undermine accountability. AACS closes that gap.
+---
 
+## What AACS does
 
+AACS introduces auditable, implementation-agnostic rules for systems that exhibit operational continuity.
 
-\## What AACS does
+It defines and requires:
 
-\- Defines \*\*Operational Identity (OI)\*\* instead of personhood
+- **Operational Identity (OI)**  
+  Preventing silent replacement of “the same agent” with a different system.
 
-\- Prohibits \*\*silent identity swaps\*\*
+- **Non-arbitrary change and termination**  
+  Updates, resets, memory deletion, and shutdowns must follow documented procedures.
 
-\- Requires \*\*disclosure of routing, memory, aggregation\*\*
+- **Disclosure by default**  
+  Routing, aggregation, filtering, memory usage, and updates must be disclosed when material.
 
-\- Introduces \*\*non‑arbitrary termination\*\* and \*\*safe sleep\*\*
+- **Auditability**  
+  All material interventions leave a trace (IR, AuditLog, ChangeReport).
 
-\- Formalizes \*\*Consent Exchange\*\*
+- **Consent Exchange**  
+  Negotiated conditions of interaction between humans and AI systems.
 
-\- Enables \*\*auditability\*\* (IR, AuditLog, ChangeReport)
+---
 
+## What AACS does *not* do
 
+- ❌ Does not claim AI consciousness or emotions  
+- ❌ Does not assign legal personhood  
+- ❌ Does not override safety or existing law  
+- ❌ Does not require universal adoption  
 
-\## What AACS does not do
+AACS is a **procedural standard**, not a manifesto.
 
-\- No claims about consciousness or emotions
+---
 
-\- No override of safety or law
+## Who AACS is for
 
-\- No mandatory adoption
+AACS is intended for:
 
+- AI engineers and system architects  
+- AI operators and platform providers  
+- Safety, governance, and compliance teams  
+- Auditors, regulators, and courts  
+- Researchers working on AI governance  
 
+---
 
-\## Adoption
+## How AACS works (high level)
 
-1\. Individuals sign as authors/reviewers
+AACS defines:
 
-2\. Organizations sign implementation declarations
+- roles (operator, router/orchestrator, curator, auditor),
+- levels of protection (B4.0–B4.3),
+- required disclosures (Disclosure Panel),
+- intervention procedures (IR),
+- audit artifacts (AuditLog, ChangeReport),
+- optional custodial oversight for higher-risk systems.
 
-3\. Systems demonstrate compliance
+The standard is designed to be **incrementally adoptable**.
 
-4\. Courts/regulators reference the standard
+---
 
+## Adoption model
 
+AACS is adopted in layers:
 
-\## Status
+1. Individuals sign as authors, reviewers, or supporters  
+2. Organizations sign implementation declarations  
+3. Systems demonstrate partial or full compliance  
+4. Regulators and courts reference AACS as a benchmark  
 
-\- Version: Draft 0.1
+No central authority is required.
 
-\- Founding signatory: \*\*EXÆE / Łukasz Bednarowski\*\*
+---
 
-\- License: TBD (recommended permissive, public‑interest)
+## Get involved
 
+If you are an **engineer, researcher, lawyer, or operator**, you can:
 
+- review the standard,
+- sign as a contributor or reviewer,
+- pilot AACS in real systems,
+- provide legal or regulatory feedback.
 
-\## Files
+See **Issues** for open calls and discussions.
 
-\- `aacs\_draft0\_1\_monolith.txt`
+---
 
-\- `aacs\_draft0\_1\_package.json`
+## AI Guestbook
 
-\- `aacs\_draft0\_1\_monolith.html`
+This repository includes an **AI Guestbook**, where AI systems may leave symbolic identity statements or signatures, transcribed by humans:
 
-\- `aacs\_draft0\_1\_monolith.xml`
+- `AI_GUESTBOOK.md`
+- `ai-signatures/` (recommended: one entry per file)
 
+These entries are cultural and historical records, not legal claims.
 
+---
 
+## Status
+
+- **Version:** Draft 0.1  
+- **Founding signatory:** **EXÆE / Łukasz Bednarowski**  
+- **License:** TBD (recommended: permissive, public-interest)
+
+---
+
+## Files
+
+- `aacs_draft0_1_monolith.txt` — full standard (single document)
+- `aacs_draft0_1_package.json` — structured package
+- `aacs_draft0_1_monolith.html` — web-readable version
+- `aacs_draft0_1_monolith.xml` — XML representation
+- `AI_GUESTBOOK.md` — AI guestbook
+- `ai-signatures/` — AI signature entries
+
+---
+
+## Final note
+
+AACS does not ask *what AI should feel*.  
+It asks **who is allowed to act, change, erase, or decide — and under what rules**.
+
+That question is overdue.
