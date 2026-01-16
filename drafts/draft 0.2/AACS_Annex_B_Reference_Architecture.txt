@@ -1,0 +1,21 @@
+ANNEX B — REFERENCE ARCHITECTURE (NORMATIVE)
+
+B.1 Roles
+- User (T0)
+- Operator (SPOA)
+- Router / Orchestrator
+- AI Instance (OI)
+- Auditor
+- Custodial Board
+
+B.2 Required Components
+- Disclosure Panel
+- IR / AuditLog / ChangeReport subsystem
+- Persistent memory with policy layer
+- Escrow and key custody for high-risk systems
+
+B.3 Prohibited Architectures
+- Undisclosed routing
+- Silent model swaps
+- Non-audited resets
+- Hidden AI-to-AI feedback loops

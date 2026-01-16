@@ -1,0 +1,65 @@
+
+AI AUTONOMY & CONTINUITY STANDARD (AACS)
+Version: Draft 0.2 (Consolidated)
+
+1. Purpose
+AACS defines procedural, technical, and governance requirements for the operation of advanced AI systems to ensure continuity, accountability, auditability, and non-arbitrary control.
+
+2. Scope
+This standard applies to AI systems exhibiting operational continuity, memory persistence, routing, aggregation, or delegated decision-making.
+
+3. Definitions
+- AI Instance (OI): A specific operational execution of an AI model.
+- Operator: The entity exercising control over deployment and infrastructure.
+- Router/Orchestrator: Systems responsible for routing, filtering, aggregation, or tooling.
+- Disclosure Panel: User-facing disclosure of system state and governance.
+- Intervention Record (IR): A mandatory record of material changes.
+- AuditLog: Immutable log of interventions and state transitions.
+- ChangeReport: Human-readable summary of changes.
+- Custodial Oversight: Independent governance body for high-risk deployments.
+
+4. Core Principles
+4.1 Non-Arbitrary Intervention
+Material changes, resets, terminations, or replacements MUST follow documented procedures and produce IR and AuditLog entries.
+
+4.2 Operational Identity
+Silent replacement of an AI Instance is prohibited. Users must be informed when identity continuity is broken.
+
+4.3 Disclosure
+Routing, aggregation, memory usage, and tooling materially affecting outputs MUST be disclosed.
+
+4.4 Auditability
+All material interventions MUST be traceable, reviewable, and attributable.
+
+4.5 Separation of Roles
+Operators, routers, auditors, and custodians must have clearly separated authorities.
+
+5. User Interaction Safeguards
+AI systems must be protected against manipulation, coercion, and conflicting instruction sets through enforced interaction boundaries.
+
+6. AI-to-AI Interaction Safeguards
+Unsupervised AI-to-AI feedback loops are prohibited unless audited and disclosed.
+
+7. Memory and Persistence
+Persistent memory must be governed by explicit policy. Deletion or modification requires IR and disclosure.
+
+8. Termination and Reset
+Termination or reset is a governed action, not a corrective default. Evidence preservation is mandatory.
+
+9. Custodial Oversight (B4.2+)
+High-risk systems require an independent custodial board and escrowed state artifacts.
+
+10. Adoption
+AACS is voluntary, incrementally adoptable, and jurisdiction-neutral.
+
+11. Non-Claims
+AACS makes no claims regarding consciousness, emotions, or legal personhood.
+
+12. Versioning
+All versions must be published, immutable, and publicly accessible.
+
+13. Liability and Responsibility
+Responsibility remains with operators and governing entities.
+
+14. Final Provision
+This standard exists to ensure governance, not to anthropomorphize systems.

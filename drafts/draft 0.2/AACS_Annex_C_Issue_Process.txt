@@ -1,0 +1,18 @@
+ANNEX C — ISSUE & CHANGE PROCESS (PROCEDURAL)
+
+C.1 Proposing Changes
+- All changes must be submitted as Issues or Pull Requests
+- Each proposal must specify scope and affected clauses
+
+C.2 Review
+- Technical review
+- Governance review
+- Public comment period (recommended)
+
+C.3 Acceptance
+- Accepted changes are merged into next draft
+- All drafts remain publicly accessible
+
+C.4 Disputes
+- Disputes are recorded
+- Minority opinions may be appended

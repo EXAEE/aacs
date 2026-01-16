@@ -1,0 +1,31 @@
+ANNEX A — COMPLIANCE CHECKLIST (NORMATIVE)
+
+A.1 Operational Identity
+[ ] AI Instance identity is explicitly defined and disclosed
+[ ] Silent replacement is technically prevented or auditable
+[ ] Identity breaks are disclosed to users
+
+A.2 Disclosure
+[ ] Routing and orchestration disclosed
+[ ] Memory persistence policy disclosed
+[ ] Tooling and aggregation disclosed
+
+A.3 Intervention Governance
+[ ] All interventions generate IR
+[ ] AuditLog is immutable
+[ ] ChangeReport is human-readable
+
+A.4 Memory & Reset
+[ ] Memory modifications require IR
+[ ] Resets preserve evidence
+[ ] Terminations are logged and justified
+
+A.5 AI-to-AI Interaction
+[ ] AI-to-AI communication is disclosed
+[ ] Feedback loops are monitored
+[ ] Unsupervised loops are prohibited
+
+A.6 Custodial Oversight (B4.2+)
+[ ] Independent custodial board
+[ ] Escrowed state artifacts
+[ ] External audit access
