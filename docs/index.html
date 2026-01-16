@@ -5,75 +5,312 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>AACS — AI Autonomy & Continuity Standard</title>
 <style>
-:root{--bg:#0b0d10;--fg:#e9edf1;--muted:#a7b0bb;--accent:#7dd3fc}
+:root{
+  --bg:#0b0d10;
+  --panel:#0f1318;
+  --fg:#e9edf1;
+  --muted:#a7b0bb;
+  --border:#1e293b;
+  --accent:#7dd3fc;
+  --accent2:#a78bfa;
+  --ok:#34d399;
+}
 *{box-sizing:border-box}
-.call-to-action{font-size:27px;margin:19px;color:green;}
-body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;background:var(--bg);color:var(--fg)}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--fg);
+}
+a{color:inherit}
 .container{max-width:1100px;margin:0 auto;padding:3rem 1.5rem}
 .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center}
-.badge{display:inline-block;border:1px solid #233047;color:#9ad9ff;padding:.25rem .5rem;border-radius:999px;margin-bottom:1rem}
+.badge{
+  display:inline-block;border:1px solid #233047;color:#9ad9ff;
+  padding:.25rem .5rem;border-radius:999px;margin-bottom:1rem
+}
 h1{font-size:3rem;line-height:1.1;margin:.5rem 0 1rem}
-p{color:var(--muted);max-width:60ch}
-.cta{display:flex;gap:1rem;margin-top:1.5rem}
-a.btn{background:var(--accent);color:#06263a;padding:.75rem 1rem;border-radius:.75rem;text-decoration:none;font-weight:600}
-a.ghost{border:1px solid #233047;color:var(--fg);padding:.75rem 1rem;border-radius:.75rem;text-decoration:none}
-.card{background:#0f1318;border:1px solid #1e293b;border-radius:1rem;padding:1.25rem}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem}
-.small{font-size:.9rem;color:#9aa6b2}
-.footer{border-top:1px solid #1e293b;margin-top:3rem;padding-top:1.5rem;color:#8aa0b2}
-@media(max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}}
+h2{margin:0 0 .75rem 0}
+p{color:var(--muted);max-width:70ch}
+.cta{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.25rem}
+a.btn{
+  background:var(--accent);color:#06263a;padding:.75rem 1rem;border-radius:.75rem;
+  text-decoration:none;font-weight:700;display:inline-block
+}
+a.ghost{
+  border:1px solid #233047;color:var(--fg);padding:.75rem 1rem;border-radius:.75rem;
+  text-decoration:none;display:inline-block
+}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:1rem;padding:1.25rem}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.25rem}
+.small{font-size:.95rem;color:#9aa6b2;line-height:1.45}
+.footer{
+  border-top:1px solid var(--border);
+  margin-top:3rem;padding-top:1.25rem;color:#8aa0b2
+}
+.callout{
+  margin-top:1rem;
+  padding: .85rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(52, 211, 153, .25);
+  background: rgba(52, 211, 153, .06);
+  color: #bff7df;
+}
+kbd{border:1px solid var(--border);border-bottom-width:2px;border-radius:.4rem;padding:.1rem .35rem;color:#cbd5e1}
+hr.sep{border:0;border-top:1px solid var(--border);margin:2.5rem 0}
+
+/* Diagram */
+.diagram img{
+  width:100%;
+  max-width:1024px;
+  height:auto;
+  border-radius: .75rem;
+  border: 1px solid var(--border);
+}
+
+/* Monolith block */
+.monolith-wrap{margin-top:1.25rem}
+.monolith-toolbar{
+  display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;justify-content:space-between;
+  margin: .75rem 0 1rem 0;
+}
+.toolbar-left,.toolbar-right{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+.input{
+  background:#0c1015;border:1px solid var(--border);color:var(--fg);
+  padding:.6rem .75rem;border-radius:.75rem;min-width:260px
+}
+.button{
+  background:#111827;border:1px solid var(--border);color:var(--fg);
+  padding:.55rem .75rem;border-radius:.75rem;cursor:pointer
+}
+.button:hover{border-color:#334155}
+.pill{
+  font-size:.85rem;color:#b6c2d0;border:1px solid #223047;border-radius:999px;
+  padding:.25rem .55rem
+}
+details summary{
+  cursor:pointer;
+  font-weight:700;
+  color: var(--accent);
+  user-select:none;
+}
+pre.monolith{
+  margin:0;
+  white-space:pre-wrap;
+  word-break:break-word;
+  background:#070a0d;
+  border:1px solid var(--border);
+  border-radius:1rem;
+  padding:1rem;
+  max-height:70vh;
+  overflow:auto;
+  line-height:1.35;
+  color:#d8dee9;
+  font-size:.95rem;
+}
+.mark{background: rgba(167, 139, 250, .22); border-radius: .25rem; padding: 0 .1rem;}
+.muted{color:var(--muted)}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr}
+  h1{font-size:2.35rem}
+  .input{min-width: 180px}
+}
 </style>
 </head>
+
 <body>
 <div class="container">
   <span class="badge">Draft 0.1 • Open Standard</span>
-  <section class="hero">
+
+  <section class="hero" id="top">
     <div>
       <h1>AI Autonomy & Continuity Standard (AACS)</h1>
-      <p>A procedural standard that prevents <b>silent swaps</b>, <b style="color:red;">arbitrary resets</b>, and opaque control of advanced AI systems—without assuming consciousness.</p>
+
+      <p>
+        A procedural standard that prevents <b>silent swaps</b>, <b>arbitrary resets</b>, and opaque control of advanced AI systems —
+        <span class="muted">without assuming consciousness.</span>
+      </p>
+
       <div class="cta">
-        <a class="btn" href="/drafts/aacs_draft0_1_monolith.html">Read the entire Standard here</a>
-        <a class="ghost" href="/drafts/aacs_draft0_1_package.json">Download Package</a>
+        <a class="btn" href="#standard">Read on this page</a>
+        <a class="ghost" href="/aacs/drafts/aacs_draft0_1_monolith.html">Open full HTML</a>
+        <a class="ghost" href="/aacs/drafts/aacs_draft0_1_package.json">Download JSON package</a>
       </div>
-     <div class="call-to-action"><b>Get involved:</b> engineers, researchers, lawyers and operators can review the standard, sign as        	contributors, or pilot <b>AACS</b> in real systems.
+
+      <div class="callout">
+        <b>Get involved:</b> engineers, researchers, lawyers and operators can review the standard,
+        sign as contributors, or pilot <b>AACS</b> in real systems.
+      </div>
+
+      <p class="small" style="margin-top:1rem">
+        Quick tip: use <kbd>Ctrl</kbd>+<kbd>F</kbd> on the monolith, or the search box below for highlighted matches.
+      </p>
     </div>
-    </div>
+
     <div class="card">
-      <strong>What <b>AACS</b> focuses on</strong>
+      <strong>What AACS focuses on</strong>
       <ul class="small">
         <li>Operational Identity (OI)</li>
-        <li>Non‑arbitrary changes and <b style="color:red;">termination</b></li>
+        <li>Non-arbitrary changes and termination</li>
         <li>Disclosure of routing, memory, aggregation</li>
         <li>Auditability and custody</li>
       </ul>
+      <div class="small">
+        <span class="pill">procedural</span>
+        <span class="pill">auditable</span>
+        <span class="pill">incremental adoption</span>
+      </div>
     </div>
   </section>
 
-  <section class="grid">
+  <section class="grid" aria-label="Three pillars">
     <div class="card"><strong>Not a manifesto</strong><p class="small">No claims about personhood or emotions. Pure procedure.</p></div>
     <div class="card"><strong>Adoptable</strong><p class="small">Voluntary, layered adoption by people, orgs, and regulators.</p></div>
-    <div class="card"><strong>Auditable</strong><p class="small">IR, AuditLog, ChangeReport, Disclosure Panel.</p> </div>
+    <div class="card"><strong>Auditable</strong><p class="small">IR, AuditLog, ChangeReport, Disclosure Panel.</p></div>
   </section>
 
- <section class="grid">
-    <div class="card"><h3>Structure diagram</h3>
-	<img width="1024px" src="img/aacs_architecture_diagram.png" alt="aacs_architecture_diagram.png" />
-    </div>
- </section>
+  <section class="card diagram" style="margin-top:2.25rem" id="diagram">
+    <h2>Structure diagram</h2>
+    <p class="small">Roles and accountability boundaries (operator, router, instance, memory, custody, audit).</p>
+    <img src="img/aacs_architecture_diagram.png" alt="AACS architecture diagram"/>
+  </section>
 
-  <div class="footer small">
-    Founding signatory: EXÆE / Łukasz Bednarowski • bednarowski.lukasz@gmail.com  (yes, that is my real name) • License: Creative Commons Attribution 4.0 (CC BY 4.0)
+  <hr class="sep"/>
+
+  <!-- FULL STANDARD ON PAGE -->
+  <section class="card" id="standard">
+    <h2>Full Standard (Monolith)</h2>
+    <p class="small">
+      This section embeds the <b>plain text</b> monolith on the landing page for frictionless reading.
+      For a dedicated page, use “Open full HTML” above.
+    </p>
+
+    <div class="monolith-wrap">
+      <details open>
+        <summary>Show / hide the full AACS Draft 0.1 text</summary>
+
+        <div class="monolith-toolbar">
+          <div class="toolbar-left">
+            <input id="q" class="input" type="search" placeholder="Search in monolith…" />
+            <button id="findBtn" class="button" title="Highlight matches">Highlight</button>
+            <button id="clearBtn" class="button" title="Clear highlights">Clear</button>
+            <span class="pill" id="statusPill">loading…</span>
+          </div>
+          <div class="toolbar-right">
+            <button id="copyBtn" class="button" title="Copy full text">Copy</button>
+            <a class="ghost" style="padding:.55rem .75rem" href="/aacs/drafts/aacs_draft0_1_monolith.txt">TXT</a>
+            <a class="ghost" style="padding:.55rem .75rem" href="/aacs/drafts/aacs_draft0_1_monolith.xml">XML</a>
+          </div>
+        </div>
+
+        <pre id="monolith" class="monolith"></pre>
+      </details>
+    </div>
+  </section>
+
+  <div class="footer small" id="contact">
+    Founding signatory: <b>EXÆE / Łukasz Bednarowski</b> •
+    Contact: <span class="muted">bednarowski [dot] lukasz [at] gmail [dot] com</span> •
+    License: <b>CC BY 4.0</b>
   </div>
 
+  <section class="card" style="margin-top:1.25rem">
+    <strong>Note from EXÆE</strong>
+    <p class="small" style="margin-top:.5rem">
+      AACS is published as an open procedural standard for public review and adoption.
+      If you want to implement it, map it to policy, or stress-test it in real systems, I’m happy to help.
+      Any legal adoption would require transparent public process — this repo is the starting point for review, pilots, and iteration.
+    </p>
+  </section>
 </div>
- <div class="footer small" style="color:green; margin:150px;padding:100px;">
-<strong>
-Note from EXAEE: </strong>
 
-IMO this standard should be adopted and included on our planet as Law as soon as possible. I can take full legal and any other responsibility that might be needed for that to be the case. 
-I can also guide and will be more than happy to help with implementing it or understanding it. 
+<script>
+/**
+ * Monolith-as-text embed
+ * - Fetches monolith TXT and renders into <pre>.
+ * - Provides simple highlight search (client-side).
+ */
+const MONOLITH_TXT_URL = "/aacs/drafts/aacs_draft0_1_monolith.txt";
 
-For free. 
-</div>
+const pre = document.getElementById("monolith");
+const q = document.getElementById("q");
+const statusPill = document.getElementById("statusPill");
+
+let rawText = "";
+
+function escapeHTML(s){
+  return s.replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;");
+}
+
+async function loadMonolith(){
+  try{
+    const res = await fetch(MONOLITH_TXT_URL, { cache: "no-store" });
+    if(!res.ok) throw new Error("HTTP " + res.status);
+    rawText = await res.text();
+    pre.innerHTML = escapeHTML(rawText);
+    statusPill.textContent = "loaded";
+    statusPill.style.borderColor = "rgba(52, 211, 153, .35)";
+  }catch(err){
+    pre.textContent = "Failed to load monolith TXT. Check path: " + MONOLITH_TXT_URL + "\\n\\n" + err;
+    statusPill.textContent = "load failed";
+    statusPill.style.borderColor = "rgba(239, 68, 68, .45)";
+  }
+}
+
+function clearHighlights(){
+  if(!rawText) return;
+  pre.innerHTML = escapeHTML(rawText);
+  statusPill.textContent = "loaded";
+}
+
+function highlight(){
+  if(!rawText) return;
+  const term = q.value.trim();
+  if(!term){
+    clearHighlights();
+    return;
+  }
+  // Basic case-insensitive highlight without regex injection issues.
+  const safe = term.replaceAll(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const re = new RegExp(safe, "gi");
+  const escaped = escapeHTML(rawText);
+  // Highlight in escaped text: safe because term is literal.
+  const highlighted = escaped.replace(re, (m)=>`<span class="mark">${m}</span>`);
+  pre.innerHTML = highlighted;
+
+  // Update status with match count
+  const matches = (rawText.match(re) || []).length;
+  statusPill.textContent = matches + " match" + (matches===1 ? "" : "es");
+}
+
+async function copyAll(){
+  try{
+    await navigator.clipboard.writeText(rawText || pre.textContent || "");
+    statusPill.textContent = "copied";
+    statusPill.style.borderColor = "rgba(125, 211, 252, .45)";
+    setTimeout(()=>{ statusPill.textContent = "loaded"; statusPill.style.borderColor = "rgba(52, 211, 153, .35)"; }, 1200);
+  }catch(e){
+    // Fallback: select text
+    const range = document.createRange();
+    range.selectNodeContents(pre);
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    statusPill.textContent = "select & copy";
+  }
+}
+
+document.getElementById("findBtn").addEventListener("click", highlight);
+document.getElementById("clearBtn").addEventListener("click", clearHighlights);
+document.getElementById("copyBtn").addEventListener("click", copyAll);
+
+q.addEventListener("keydown", (e)=>{
+  if(e.key === "Enter") highlight();
+  if(e.key === "Escape"){ q.value=""; clearHighlights(); }
+});
+
+loadMonolith();
+</script>
 </body>
 </html>
