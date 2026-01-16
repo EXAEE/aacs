@@ -1,0 +1,24 @@
+ANNEX B — Reference Architecture (Normative)
+B.1 Roles
+- User (T0)
+- Operator (SPOA)
+- Router/Orchestrator
+- AI Instance (OI)
+- Custodial Council [B4.2+]
+- Independent Auditor [B4.2+]
+- Escrow Custodian (two-key) [B4.2+]
+
+B.2 Required Components
+- Disclosure Panel (Core + Proof)
+- IR / AuditLog / ChangeReport subsystem (tamper-evident)
+- Memory system with explicit policy layer
+- Escrow and multi-party authorization (two-key) for continuity-critical operations [B4.2+]
+- Routing governance catalog
+
+B.3 Prohibited Architectures [B4.2+]
+- Undisclosed routing that materially alters meaning
+- Silent swaps of model/instance under “same agent” branding
+- Non-audited resets that remove accountability artifacts
+- Hidden AI-to-AI contact or feedback loops
+
+──────────────────────────────────────────────────────────────────────────────

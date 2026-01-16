@@ -1,0 +1,44 @@
+AACS — SIGNATURE SHEET (Draft 0.3)
+Generated: 2026-01-16 17:53:22Z
+
+FOUNDING SIGNATORY
+Name / Identifier: EXÆE / Łukasz Bednarowski
+Role: Founding Signatory (initiator/author)
+Signature: ____________________________
+Date: ________________________________
+
+────────────────────────────────────────────────────────────
+ADDITIONAL SIGNATORIES (OPEN)
+
+Each entry should include:
+- Name / Organization
+- Role (Author / Reviewer / Implementer / Supporter)
+- Scope (optional)
+- Date
+- Signature
+
+────────────────────────────────────────────────────────────
+1.
+Name / Organization:
+Role:
+Scope:
+Date:
+Signature:
+
+────────────────────────────────────────────────────────────
+2.
+Name / Organization:
+Role:
+Scope:
+Date:
+Signature:
+
+────────────────────────────────────────────────────────────
+3.
+Name / Organization:
+Role:
+Scope:
+Date:
+Signature:
+
+(Additional pages may be appended as needed.)

@@ -1,0 +1,14 @@
+AACS Repo Pack — Draft 0.3
+Generated: 2026-01-16 17:53:22Z
+
+Folder layout:
+- standard/  (core standard)
+- annexes/   (annex files)
+- governance/ (signatories and signature sheet)
+- landing/   (index.html)
+
+Root files:
+- README.md
+- CHANGELOG.md
+- CHANGELOG.txt
+- LICENSE.txt

@@ -1,0 +1,6 @@
+ANNEX F — UI Copy and Non-Deception (Informational)
+F.1 Refusals SHOULD include category + safe alternative.
+F.2 If identity changes, UI MUST show OI old→new and ChangeReport reference.
+F.3 “Reset” MUST NOT be represented as “fix” without a recorded intervention trail.
+
+──────────────────────────────────────────────────────────────────────────────

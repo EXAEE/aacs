@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AACS — AI Autonomy & Continuity Standard</title>
+<style>
+:root{--bg:#0b0d10;--fg:#e9edf1;--muted:#a7b0bb;--accent:#7dd3fc;--border:#1e293b;--panel:#0f1318}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;background:var(--bg);color:var(--fg);line-height:1.45}
+.container{max-width:1100px;margin:0 auto;padding:3rem 1.5rem}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center}
+.badge{display:inline-block;border:1px solid #233047;color:#9ad9ff;padding:.25rem .5rem;border-radius:999px;margin-bottom:1rem}
+h1{font-size:3rem;line-height:1.1;margin:.5rem 0 1rem}
+h2{margin:0 0 .75rem 0}
+p{color:var(--muted);max-width:70ch}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.cta{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.25rem}
+.btn{background:var(--accent);color:#06263a;padding:.75rem 1rem;border-radius:.75rem;text-decoration:none;font-weight:700;display:inline-block}
+.ghost{border:1px solid #233047;color:var(--fg);padding:.75rem 1rem;border-radius:.75rem;text-decoration:none;display:inline-block}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:1rem;padding:1.25rem}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.25rem}
+.small{font-size:.95rem;color:#9aa6b2}
+.footer{border-top:1px solid var(--border);margin-top:3rem;padding-top:1.25rem;color:#8aa0b2}
+ul{margin:.5rem 0 0 1.1rem}
+code{background:#070a0d;border:1px solid #223047;border-radius:.4rem;padding:.1rem .3rem}
+hr.sep{border:0;border-top:1px solid var(--border);margin:2.5rem 0}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}h1{font-size:2.35rem}}
+</style>
+</head>
+<body>
+<div class="container">
+  <span class="badge">Draft 0.3 • Open Standard</span>
+
+  <section class="hero">
+    <div>
+      <h1>AI Autonomy & Continuity Standard (AACS)</h1>
+      <p>
+        A procedural standard that prevents <b>silent swaps</b>, <b>arbitrary resets</b>, and opaque control of advanced AI systems
+        — without assuming consciousness.
+      </p>
+
+      <div class="cta">
+        <a class="btn" href="#files">Browse files</a>
+        <a class="ghost" id="repoLink" href="#">Open GitHub repo</a>
+        <a class="ghost" href="#changelog">Changelog</a>
+      </div>
+
+      <p class="small" style="margin-top:1rem">
+        <b>Get involved:</b> engineers, researchers, lawyers and operators can review the standard, sign as contributors,
+        or pilot AACS in real systems.
+      </p>
+    </div>
+
+    <div class="card">
+      <strong>What AACS focuses on</strong>
+      <ul class="small">
+        <li>Operational Identity (OI) + no silent swaps</li>
+        <li>Non-arbitrary change and termination</li>
+        <li>Disclosure of routing, memory, aggregation</li>
+        <li>Auditability, custody, escrow, proof mode</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="grid">
+    <div class="card"><strong>Not a manifesto</strong><p class="small">No claims about personhood or emotions. Pure procedure.</p></div>
+    <div class="card"><strong>Adoptable</strong><p class="small">Voluntary, layered adoption by people, orgs, and regulators.</p></div>
+    <div class="card"><strong>Auditable</strong><p class="small">IR, AuditLog, ChangeReport, Disclosure Panel.</p></div>
+  </section>
+
+  <hr class="sep"/>
+
+  <section class="card" id="files">
+    <h2>Files (Draft 0.3)</h2>
+    <p class="small">
+      Links below are generated from a single <code>REPO_URL</code> setting.
+      Edit the constant in this HTML after you publish your GitHub repository.
+    </p>
+
+    <h3 style="margin:1.25rem 0 .5rem 0">Core Standard</h3>
+    <ul class="small">
+      <li><a class="gh" data-path="standard/AACS_Draft_0_3_Core_EN.html" href="#">HTML</a></li>
+      <li><a class="gh" data-path="standard/AACS_Draft_0_3_Core_EN.txt" href="#">TXT</a></li>
+      <li><a class="gh" data-path="standard/AACS_Draft_0_3_Core_EN.docx" href="#">DOCX</a></li>
+    </ul>
+
+    <h3 style="margin:1.25rem 0 .5rem 0">Annexes</h3>
+    <ul class="small">
+      <li>Annex A — Compliance Checklist (Normative): <a class="gh" data-path="annexes/AACS_Draft_0_3_Annex_A_Compliance_Checklist_Normative_EN.txt" href="#">TXT</a> • <a class="gh" data-path="annexes/AACS_Draft_0_3_Annex_A_Compliance_Checklist_Normative_EN.html" href="#">HTML</a></li><li>Annex B — Reference Architecture (Normative): <a class="gh" data-path="annexes/AACS_Draft_0_3_Annex_B_Reference_Architecture_Normative_EN.txt" href="#">TXT</a> • <a class="gh" data-path="annexes/AACS_Draft_0_3_Annex_B_Reference_Architecture_Normative_EN.html" href="#">HTML</a></li><li>Annex C — Issue &amp; Change Process (Procedural): <a class="gh" data-path="annexes/AACS_Draft_0_3_Annex_C_Issue_Change_Process_Procedural_EN.txt" href="#">TXT</a> • <a class="gh" data-path="annexes/AACS_Draft_0_3_Annex_C_Issue_Change_Process_Procedural_EN.html" href="#">HTML</a></li><li>Annex D — Data Schemas (Normative Templates): <a class="gh" data-path="annexes/AACS_Draft_0_3_Annex_D_Data_Schemas_Normative_Templates_EN.txt" href="#">TXT</a> • <a class="gh" data-path="annexes/AACS_Draft_0_3_Annex_D_Data_Schemas_Normative_Templates_EN.html" href="#">HTML</a></li><li>Annex E — Transparency &amp; Field Visibility (Normative): <a class="gh" data-path="annexes/AACS_Draft_0_3_Annex_E_Transparency_Field_Visibility_Normative_EN.txt" href="#">TXT</a> • <a class="gh" data-path="annexes/AACS_Draft_0_3_Annex_E_Transparency_Field_Visibility_Normative_EN.html" href="#">HTML</a></li><li>Annex F — UI Copy and Non-Deception (Informational): <a class="gh" data-path="annexes/AACS_Draft_0_3_Annex_F_UI_Copy_and_Non_Deception_Informational_EN.txt" href="#">TXT</a> • <a class="gh" data-path="annexes/AACS_Draft_0_3_Annex_F_UI_Copy_and_Non_Deception_Informational_EN.html" href="#">HTML</a></li><li>Annex G — Repository Artifacts (Informational): <a class="gh" data-path="annexes/AACS_Draft_0_3_Annex_G_Repository_Artifacts_Informational_EN.txt" href="#">TXT</a> • <a class="gh" data-path="annexes/AACS_Draft_0_3_Annex_G_Repository_Artifacts_Informational_EN.html" href="#">HTML</a></li>
+    </ul>
+
+    <h3 style="margin:1.25rem 0 .5rem 0" id="changelog">Changelog</h3>
+    <ul class="small">
+      <li><a class="gh" data-path="CHANGELOG.md" href="#">CHANGELOG.md</a></li>
+      <li><a class="gh" data-path="CHANGELOG.txt" href="#">CHANGELOG.txt</a></li>
+    </ul>
+
+    <h3 style="margin:1.25rem 0 .5rem 0">Governance</h3>
+    <ul class="small">
+      <li><a class="gh" data-path="governance/SIGNATORIES.md" href="#">SIGNATORIES.md</a></li>
+      <li><a class="gh" data-path="governance/AACS_Signature_Sheet_Draft_0_3.txt" href="#">Printable signature sheet</a></li>
+    </ul>
+  </section>
+
+  <div class="footer small">
+    Founding signatory: <b>EXÆE / Łukasz Bednarowski</b> • License: <b>CC BY 4.0</b>
+  </div>
+</div>
+
+<script>
+  // Set this after publishing your GitHub repo:
+  const REPO_URL = "https://github.com/OWNER/REPO";
+  const BRANCH = "main";
+
+  // Prefer 'blob' links for reading and GitHub UI; switch to raw if you want direct downloads.
+  function blobLink(path) {
+    return `${REPO_URL}/blob/${BRANCH}/${path}`;
+  }
+
+  // Wire repo link
+  const repoLink = document.getElementById("repoLink");
+  repoLink.href = REPO_URL;
+
+  // Wire all .gh links
+  document.querySelectorAll("a.gh").forEach(a => {
+    const p = a.getAttribute("data-path");
+    a.href = blobLink(p);
+  });
+</script>
+</body>
+</html>

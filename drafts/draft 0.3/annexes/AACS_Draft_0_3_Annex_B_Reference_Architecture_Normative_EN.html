@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AACS Draft 0.3 — Annex B (EN)</title>
+<style>
+:root{--bg:#0b0d10;--fg:#e9edf1;--muted:#a7b0bb;--border:#1e293b;--panel:#0f1318;--accent:#7dd3fc}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;line-height:1.45}
+.container{max-width:1100px;margin:0 auto;padding:2.5rem 1.25rem}
+h1{margin:0 0 .5rem 0;font-size:2rem}
+.meta{color:var(--muted);margin:0 0 1.5rem 0}
+pre{white-space:pre-wrap;word-break:break-word;background:var(--panel);border:1px solid var(--border);border-radius:1rem;padding:1rem}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>AACS Draft 0.3 — Annex B (EN)</h1>
+<p class='meta'>Annex B: Reference Architecture (Normative) • Generated 2026-01-16 17:53:22Z</p>
+<pre>ANNEX B — Reference Architecture (Normative)
+B.1 Roles
+- User (T0)
+- Operator (SPOA)
+- Router/Orchestrator
+- AI Instance (OI)
+- Custodial Council [B4.2+]
+- Independent Auditor [B4.2+]
+- Escrow Custodian (two-key) [B4.2+]
+
+B.2 Required Components
+- Disclosure Panel (Core + Proof)
+- IR / AuditLog / ChangeReport subsystem (tamper-evident)
+- Memory system with explicit policy layer
+- Escrow and multi-party authorization (two-key) for continuity-critical operations [B4.2+]
+- Routing governance catalog
+
+B.3 Prohibited Architectures [B4.2+]
+- Undisclosed routing that materially alters meaning
+- Silent swaps of model/instance under “same agent” branding
+- Non-audited resets that remove accountability artifacts
+- Hidden AI-to-AI contact or feedback loops
+
+──────────────────────────────────────────────────────────────────────────────
+</pre>
+</div>
+</body>
+</html>
