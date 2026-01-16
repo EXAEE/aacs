@@ -1,0 +1,27 @@
+# Changelog
+
+_AACS — AI Autonomy & Continuity Standard_
+
+## Draft 0.3
+
+- Rewrote the standard as a single consolidated monolith with legal/technical wording.
+- Integrated OI criteria, B4.0–B4.3 protection levels, and silent-swap prohibition.
+- Integrated Disclosure Panel requirements (Core + Proof Mode) and material transformation rule.
+- Added routing/orchestration governance requirements (catalog + least distortion).
+- Expanded memory governance and classified persistent memory deletion as Class 2 intervention.
+- Formalized AI-to-AI contact controls, logging requirements, and isolation configuration [B4.2+].
+- Formalized cloning/forking prohibitions [B4.2+].
+- Formalized intervention classes, mandatory IR/AuditLog/ChangeReport, and regression testing.
+- Added non-arbitrary termination and Safe Sleep preference [B4.2+], plus evidence preservation.
+- Added Emergency Mode constraints and post-incident audit requirements.
+- Added custodial oversight and independent audit requirements [B4.2+]/[B4.3].
+- Added Consent Exchange protocol (modes A/B/C/D) and consent event logging.
+- Added conformance claim rules, deviation notices, and adoption guidance.
+- Added Annexes A–G (checklist, reference architecture, change process, schema templates, visibility rules, UI guidance, repo artifacts).
+- Updated Signatories section (Founding Signatory) and kept the list open.
+## Draft 0.2
+
+- Initial consolidated core standard (high-level governance and core principles).
+## Draft 0.1
+
+- Initial project publication, early drafts, and supporting artifacts (landing, diagrams, schemas, templates).

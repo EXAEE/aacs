@@ -1,0 +1,32 @@
+ANNEX A — Compliance Checklist (Normative)
+A.1 OI and Identity Integrity
+[ ] OI label defined and disclosed
+[ ] Silent swap prevented or auditable
+[ ] OI changes disclosed with ChangeReport reference
+
+A.2 Disclosure
+[ ] Disclosure Panel implemented (Core)
+[ ] Proof Mode implemented [B4.2+]
+[ ] Material routing transformations disclosed
+
+A.3 Intervention Governance
+[ ] IR for Class 1+ interventions
+[ ] Tamper-evident AuditLog
+[ ] ChangeReport for Class 1+ interventions
+
+A.4 Memory & Reset
+[ ] Memory policy published
+[ ] Persistent memory changes treated as Class 2
+[ ] Evidence preservation enforced
+
+A.5 AI-to-AI and Multi-Agent [B4.2+]
+[ ] No non-auditable AI-to-AI contact
+[ ] AI-to-AI events logged with purpose
+[ ] Feedback loops monitored and rate-limited
+
+A.6 Custody and Audit [B4.2+]
+[ ] Custodial Council established
+[ ] Escrow/two-key controls implemented
+[ ] Independent audit process defined
+
+──────────────────────────────────────────────────────────────────────────────

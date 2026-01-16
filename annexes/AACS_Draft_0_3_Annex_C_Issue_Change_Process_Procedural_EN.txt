@@ -1,0 +1,19 @@
+ANNEX C — Issue & Change Process (Procedural)
+C.1 Change Proposals
+- Proposals SHOULD be submitted as Git Issues or Pull Requests.
+- Each proposal SHOULD specify impacted sections and rationale.
+
+C.2 Review Stages (Recommended)
+- Technical feasibility review
+- Governance and audit impact review
+- Public comment window (optional)
+
+C.3 Acceptance
+- Accepted changes are merged into the next draft.
+- All prior drafts remain accessible.
+
+C.4 Dispute Handling
+- Disputes are recorded.
+- Minority opinions MAY be appended as informational notes.
+
+──────────────────────────────────────────────────────────────────────────────

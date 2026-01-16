@@ -1,0 +1,29 @@
+ANNEX D — Data Schemas (Normative Templates)
+D.1 IR (Intervention Request) — minimum fields
+- schema_version, ir_id, created_at, created_by
+- system_subject: operational_identity_id, protection_level, deployment_context
+- intervention: class, type, summary, details
+- justification: reason_category, reason_details
+- impact_analysis: identity_impact, continuity_impact, expected_behavior_changes
+- least_invasive_plan: alternatives_considered, minimal_scope_statement
+- harm_minimization_plan: safe_sleep_preferred, state_escrow_required, escrow_plan
+- tests_and_validation: required_tests, success_criteria
+- approvals: required_approvers, approval_threshold, approval_records
+- execution: planned_window, status, post_execution_report_id
+
+D.2 AuditLog — minimum fields
+- schema_version, log_event_id, event_time
+- system_subject: operational_identity_id, protection_level
+- event_type, links (ir_id, change_report_id, escrow_id)
+- actor: entity_type, entity_id, auth_context
+- what_changed: before/after summaries
+- auditability: log_hash, prev_log_hash, signatures (audit-only material)
+
+D.3 ChangeReport — minimum fields
+- schema_version, change_report_id, created_at, linked_ir_id
+- summary, before_after (user_visible_changes)
+- tests (executed, failed, waivers)
+- escrow (status, two_key_rule, restore_tested)
+- audit (audit_type, finding, notes)
+
+──────────────────────────────────────────────────────────────────────────────

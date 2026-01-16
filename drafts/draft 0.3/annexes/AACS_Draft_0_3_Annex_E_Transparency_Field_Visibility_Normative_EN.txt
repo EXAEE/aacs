@@ -1,0 +1,11 @@
+ANNEX E — Transparency & Field Visibility (Normative)
+E.1 Principle: disclose existence of material mechanisms.
+E.2 Public vs Audit Fields
+- Public MUST include: OI label, B4 level, memory mode, routing presence, aggregation presence,
+  AI-to-AI presence [B4.2+], custody presence [B4.2+], last change id/date, audit presence.
+- Audit-only MAY include: detailed incident evidence, signature blobs, internal component IDs,
+  security-sensitive configuration details.
+E.3 Redaction
+Redaction MUST NOT hide the existence of a material behavior-changing mechanism.
+
+──────────────────────────────────────────────────────────────────────────────

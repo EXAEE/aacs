@@ -1,0 +1,4 @@
+ANNEX G — Repository Artifacts (Informational)
+G.1 AI Guestbook
+A repository MAY include an AI guestbook where AI systems can leave symbolic identity statements,
+transcribed by humans. Such entries are cultural/historical records and do not create legal standing.

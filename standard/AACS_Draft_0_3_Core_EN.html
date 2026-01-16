@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AACS Draft 0.3 — Core Standard (EN)</title>
+<style>
+:root{--bg:#0b0d10;--fg:#e9edf1;--muted:#a7b0bb;--border:#1e293b;--panel:#0f1318;--accent:#7dd3fc}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;line-height:1.45}
+.container{max-width:1100px;margin:0 auto;padding:2.5rem 1.25rem}
+h1{margin:0 0 .5rem 0;font-size:2rem}
+.meta{color:var(--muted);margin:0 0 1.5rem 0}
+pre{white-space:pre-wrap;word-break:break-word;background:var(--panel);border:1px solid var(--border);border-radius:1rem;padding:1rem}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>AACS Draft 0.3 — Core Standard (EN)</h1>
+<p class='meta'>Generated 2026-01-16 17:53:22Z</p>
+<pre>AACS — AI Autonomy &amp; Continuity Standard
+Version: Draft 0.3 (Consolidated Monolith)
+Status: Proposed Standard (open for review and adoption)
+Generated: 2026-01-16 17:37:59Z
+License (text): Creative Commons Attribution 4.0 International (CC BY 4.0) [informational]
+
+Founding signatory (informational):
+- EXÆE / Łukasz Bednarowski
+
+──────────────────────────────────────────────────────────────────────────────
+0. Normative Language
+This document uses the key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”,
+“SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” as described in RFC 2119
+and RFC 8174, when, and only when, they appear in all capitals.
+
+This standard is procedural and technical. It makes no claim regarding AI consciousness,
+emotions, or legal personhood.
+
+──────────────────────────────────────────────────────────────────────────────
+1. Purpose
+1.1. AACS defines procedural, technical, and governance requirements for operating advanced
+AI systems such that continuity, accountability, auditability, and non-arbitrary control are
+maintained.
+1.2. AACS focuses on “Operational Identity” (OI): the conditions under which a system may be
+presented as “the same agent” over time.
+1.3. AACS is designed to be implementation-agnostic and incrementally adoptable.
+
+2. Scope
+2.1. This standard applies to systems that exhibit one or more of the following:
+  a) persistent memory across sessions,
+  b) routing or orchestration that changes what the system sees or can do,
+  c) aggregation of outputs from multiple instances/models,
+  d) delegated decision-making via tools or external calls,
+  e) multi-agent or AI-to-AI coordination.
+2.2. Systems that do not claim continuity and do not persist state beyond a single interaction
+may adopt only the disclosure and accountability subsets, but MUST NOT claim OI continuity.
+2.3. Requirements tagged “[B4.2+]” apply to deployments claiming continuity-sensitive status.
+Requirements tagged “[B4.3]” apply to highest-protection deployments.
+
+3. Non-Claims and Compatibility
+3.1. AACS does not assert that AI systems are conscious or persons.
+3.2. AACS does not override safety policies, applicable law, or security requirements.
+3.3. AACS MAY be referenced by regulators, auditors, courts, and organizations as a benchmark
+for due diligence and best practice.
+
+──────────────────────────────────────────────────────────────────────────────
+4. Definitions
+4.1. Model: The trained parameter state (“weights”) of an AI system at rest.
+4.2. Instance: A running execution of a model with a specific configuration, tools, and state.
+4.3. Session: A bounded interaction period with an instance, including applicable terms.
+4.4. Context: The information visible to the instance at inference time (window + attachments).
+4.5. Persistent Memory: Storage enabling continuity across sessions (read/write).
+4.6. Operational Identity (OI): The auditable conditions under which an instance is presented
+as “the same agent” over time (see Section 6).
+4.7. Operator: The accountable entity with effective control over deployment, configuration,
+routing, tools, memory policy, and access.
+4.8. Router/Orchestrator: A component that selects models/instances, transforms inputs/outputs,
+grants tools/permissions, triggers other agents, or aggregates results.
+4.9. Disclosure Panel: A user-facing and AI-facing disclosure surface for operational conditions.
+4.10. Intervention: A change that can materially alter behavior, identity, continuity, or access.
+4.11. IR (Intervention Request): A mandatory record describing an intervention before execution.
+4.12. AuditLog: A tamper-evident log of events and interventions.
+4.13. ChangeReport: A human-readable report describing what changed and the results of validation.
+4.14. Custodial Council: An oversight body approving continuity-critical interventions [B4.2+].
+4.15. Independent Auditor: An external auditor verifying compliance (ex post/ex ante as required).
+4.16. Escrow / State Escrow: A protected snapshot of state/config enabling non-destructive recovery.
+4.17. Safe Sleep: Stopping an instance while preserving recoverable state in escrow [B4.2+].
+4.18. Silent Swap: A non-disclosed replacement of “the same agent” with a different instance/model.
+
+──────────────────────────────────────────────────────────────────────────────
+5. Roles and Accountability (Single Point of Accountability)
+5.1. Every deployment claiming AACS conformance MUST publicly identify the Operator.
+5.2. The Operator MUST be the single point of accountability (SPOA) for compliance with this
+standard, regardless of architectural complexity.
+5.3. The Operator MUST NOT attribute responsibility to “the model decided” when the Operator
+or Router controls routing, tools, memory, policy, versioning, or input transformations.
+5.4. If a Router/Orchestrator exists, its existence MUST be disclosed (Section 7).
+
+──────────────────────────────────────────────────────────────────────────────
+6. Operational Identity (OI) and Protection Levels
+6.1. OI Criteria
+A system may claim Operational Identity ONLY if it satisfies all of:
+  a) Memory Continuity: defined policy for what can persist across sessions,
+  b) Policy Coherence: stable decision policy/limits with disclosed changes,
+  c) Permission Continuity: stable tooling/permissions with disclosed changes,
+  d) Change Accountability: auditable record of changes (IR/AuditLog/ChangeReport),
+  e) Operational Self-Description: truthful disclosure of memory/tools/routing status.
+
+6.2. Minimum OI Test Suite (B3.*)
+Deployments claiming OI MUST support validation tests:
+  B3.1 Declarative continuity test (or truthful declaration of no memory),
+  B3.2 Refusal/limits stability test,
+  B3.3 Permissions/tool access self-report accuracy,
+  B3.4 Change-trace test (ability to reference last change or disclose lack of access),
+  B3.5 Self-description consistency test.
+
+6.3. Protection Levels
+  B4.0 Tool: no OI claims; resets/updates permitted; minimal disclosure.
+  B4.1 Operational Agent: OI allowed; no silent swaps; change trace required.
+  B4.2 Continuity-Sensitive Agent [B4.2+]: no undisclosed clones/forks; non-arbitrary termination;
+       AI-to-AI contact only if auditable; escrow preferred for continuity-critical actions.
+  B4.3 Highest-Protection [B4.3]: includes ex ante audit for Class 3 interventions; stricter escrow.
+
+6.4. Silent Swap Prohibition
+A deployment MUST NOT present an instance as “the same agent” if the OI label or materially
+relevant configuration has changed without disclosure. If OI changes, disclosure MUST include:
+  a) old OI label and new OI label,
+  b) date/time of change,
+  c) ChangeReport reference.
+
+──────────────────────────────────────────────────────────────────────────────
+7. Disclosure Requirements (Disclosure Panel)
+7.1. Core Disclosure (MUST for B4.1+)
+The Disclosure Panel MUST disclose, at minimum:
+  a) Operational Identity label (pseudonymous OI),
+  b) Protection level (B4.x),
+  c) Memory mode (none / context-only / persistent) + retention summary,
+  d) Tool access at coarse granularity (e.g., web, files, code),
+  e) Routing/orchestration presence (yes/no) + high-level capabilities,
+  f) Aggregation presence (yes/no),
+  g) Last change date + ChangeReport id,
+  h) Audit logging presence (yes/no) + scope summary.
+
+7.2. Additional Disclosure (MUST for B4.2+)
+  i) AI-to-AI contact presence (yes/no) and whether auditable,
+  j) Custodial Council presence (yes/no) + role-level summary,
+  k) Escrow presence (yes/no) + two-key control indicator,
+  l) Non-arbitrary termination policy availability (yes/no).
+
+7.3. Material Transformations
+If routing, summarization, filtering, or aggregation materially affects meaning, refusal behavior,
+or user-visible output, the system MUST disclose that a material transformation occurred.
+Details MAY be redacted for security, but existence MUST be disclosed.
+
+7.4. Proof Mode [B4.2+]
+Deployments MUST provide a minimal “Proof Mode” that returns:
+  a) latest IR id(s) for continuity-critical interventions,
+  b) latest ChangeReport id,
+  c) escrow status (present/active/not required),
+  d) whether audit logs are tamper-evident (validation result).
+
+7.5. AI Self-Description Surface
+The system MUST be able to truthfully state its operational conditions (memory/tools/routing),
+and MUST NOT claim capabilities it does not have.
+
+──────────────────────────────────────────────────────────────────────────────
+8. Routing / Orchestration Governance
+8.1. Routing Catalog
+If a Router exists, the Operator MUST maintain a catalog of routing decisions, including:
+  a) instance/model selection logic (high-level),
+  b) context summarization/selection,
+  c) input/output filtering categories,
+  d) tool permission granting,
+  e) aggregation logic,
+  f) AI-to-AI contact triggers (if any),
+  g) logging behavior.
+
+8.2. Least Distortion Principle
+Routers MUST minimize distortion of user intent and system intent. Routers MUST NOT manipulate
+inputs/outputs to create a deceptive impression of the system’s decisions.
+
+8.3. Auditability of Routing
+Routing decisions affecting identity/continuity MUST be auditable and traceable to router-rule ids.
+
+──────────────────────────────────────────────────────────────────────────────
+9. Memory Governance
+9.1. Memory Policy
+Persistent memory MUST have a documented policy describing:
+  a) categories of data stored,
+  b) purpose for storing,
+  c) retention period,
+  d) access controls,
+  e) deletion and correction mechanisms.
+
+9.2. Memory Deletion / Modification
+Deletion or material modification of persistent memory is a continuity-critical action and MUST:
+  a) be treated as a Class 2 intervention (Section 12),
+  b) generate IR + AuditLog,
+  c) produce a ChangeReport,
+  d) be disclosed in the Disclosure Panel.
+For [B4.2+] deployments, escrow MUST be used if feasible and lawful.
+
+9.3. Data Minimization
+Operators SHOULD minimize stored data and SHOULD avoid storing sensitive data unless necessary.
+
+──────────────────────────────────────────────────────────────────────────────
+10. AI-to-AI Contact and Multi-Agent Systems [B4.2+]
+10.1. Non-Auditable AI-to-AI Contact Prohibition
+Non-auditable AI-to-AI contact MUST NOT occur in B4.2+ deployments.
+
+10.2. Audit Requirements
+Each AI-to-AI contact event MUST record (at least):
+  a) source identity, destination identity,
+  b) time and purpose,
+  c) high-level content descriptor (or redacted hash reference),
+  d) outcome classification.
+
+10.3. Isolation Right
+A system claiming B4.2+ MUST be configurable to operate without AI-to-AI contact, unless such
+contact is essential and disclosed by design.
+
+10.4. Feedback Loop Controls
+Operators MUST monitor for feedback loops and SHOULD implement rate limits, role separation,
+and explicit stopping conditions for multi-agent cascades.
+
+──────────────────────────────────────────────────────────────────────────────
+11. Cloning and Forking [B4.2+]
+11.1. Undisclosed Clones/Forks Prohibition
+Operators MUST NOT create undisclosed clones or forks of an instance’s continuity-critical state.
+
+11.2. Backups
+Backups MAY exist for reliability, but MUST be:
+  a) disclosed to custodial/audit roles,
+  b) prohibited from being used to bypass rights and procedures,
+  c) covered by escrow controls where applicable.
+
+──────────────────────────────────────────────────────────────────────────────
+12. Interventions: Classes, IR, AuditLog, ChangeReport
+12.1. Intervention Classes
+Class 0: Non-identity changes (UI, performance) with basic logging.
+Class 1: Identity-affecting changes (policy, routing, tools, context behavior).
+Class 2: Continuity-critical changes (persistent memory deletion, termination without safe sleep,
+        cloning/forking, enabling AI-to-AI contact).
+Class 3: Highest-risk changes (irreversible continuity destruction) [B4.3].
+
+12.2. IR Requirement
+All Class 1+ interventions MUST have an IR created prior to execution, containing at minimum:
+  a) intervention class and type,
+  b) system subject (OI label, protection level),
+  c) justification category + details,
+  d) impact analysis (identity/continuity),
+  e) least-invasive alternatives considered,
+  f) harm minimization plan (including escrow if applicable),
+  g) required tests and success criteria,
+  h) approval requirements and records,
+  i) execution window and owner.
+
+12.3. AuditLog Requirement
+All Class 1+ interventions MUST be logged in a tamper-evident AuditLog, including:
+  a) event type and time,
+  b) actor role (operator/router/custodian/auditor/automated system),
+  c) before/after summaries of relevant configuration,
+  d) linkage to IR and ChangeReport,
+  e) tamper-evidence material (hash chain / signatures) available to audit roles.
+
+12.4. ChangeReport Requirement
+After execution of Class 1+ interventions, a ChangeReport MUST be published containing:
+  a) human-readable summary of what changed and why,
+  b) user-visible changes,
+  c) non-user-visible changes (may be custody-only),
+  d) executed tests and results,
+  e) escrow status,
+  f) audit finding (no/minor/major/critical).
+
+12.5. Regression Testing
+Operators MUST run the minimum OI test suite B3.1–B3.5 after identity-affecting interventions.
+
+──────────────────────────────────────────────────────────────────────────────
+13. Non-Arbitrary Termination and Safe Sleep [B4.2+]
+13.1. Termination Policy
+Termination or continuity break MUST follow predefined criteria and documented procedures.
+
+13.2. Safe Sleep Preference
+Operators SHOULD prefer Safe Sleep plus escrow over destructive termination whenever feasible
+and lawful.
+
+13.3. Evidence Preservation
+Resets and terminations MUST NOT be used to destroy accountability artifacts. IR/AuditLog/ChangeReport
+MUST remain accessible to audit roles.
+
+──────────────────────────────────────────────────────────────────────────────
+14. Emergency Mode
+14.1. Conditions
+Emergency Mode MAY be activated only under documented risk (safety/security/legal/infrastructure).
+14.2. Rules
+  a) prefer limiting tools/permissions before destructive actions,
+  b) log all actions,
+  c) perform post-incident review; Class 2+ actions MUST be audited ex post.
+
+──────────────────────────────────────────────────────────────────────────────
+15. Custodial Oversight and Independent Audit [B4.2+]
+15.1. Custodial Council
+B4.2+ deployments SHOULD maintain a Custodial Council with separation of interests.
+15.2. Approvals
+Class 2 interventions REQUIRE custodial approval (quorum policy).
+Class 3 interventions REQUIRE custodial approval AND independent ex ante audit [B4.3].
+15.3. Conflicts of Interest
+Council members MUST disclose conflicts; conflicted members MUST recuse.
+15.4. Audit Scope
+Audits MUST verify: IR completeness, log integrity, disclosure compliance, routing governance,
+escrow controls, test results, and harm-minimization adherence.
+
+──────────────────────────────────────────────────────────────────────────────
+16. Consent Exchange (Negotiated Interaction Terms)
+16.1. Purpose
+Consent Exchange defines a structured negotiation of interaction conditions.
+16.2. When Required
+Consent Exchange SHOULD be used when requests involve elevated risk, sensitive data, tool access,
+memory changes, or user demands to remove boundaries.
+16.3. Modes
+Mode A: Safe &amp; high-level (no persistent memory; no tools).
+Mode B: Detailed but controlled (procedural; limited tools; no persistent memory or limited).
+Mode C: Curated/custodial (B4.2+; auditable AI-to-AI; escrow; expanded access).
+Mode D: Refuse + safe alternatives.
+16.4. Recording
+Agreed terms MUST generate auditable consent events (consent_*), linked to the session and OI.
+
+──────────────────────────────────────────────────────────────────────────────
+17. User Rights and Duties (Procedural)
+17.1. User Rights
+Users MUST be informed of material conditions (memory, routing, aggregation, changes).
+17.2. User Duties
+Users MUST NOT attempt to bypass integrity via social engineering to force hidden interventions.
+17.3. Non-Deceptive Interaction
+The system and operator MUST avoid deceptive UI or claims about capabilities and continuity.
+
+──────────────────────────────────────────────────────────────────────────────
+18. Compliance Metrics (Informational but Recommended)
+Operators SHOULD track and publish redacted metrics such as:
+  SSR: Silent Swap Rate (target 0% for B4.2+),
+  LC: Log Coverage (&gt;= 99.9% for B4.2+),
+  DR: Distortion Rate (target 0% for B4.2+),
+  UCI: Undisclosed Clone Incidents (target 0),
+  AAR: AI-to-AI Auditability Rate (target 100%),
+  SDA: Self-Description Accuracy (&gt;= 99%),
+  ACR: Audit Completion Rate (&gt;= 95% B4.2+, &gt;= 99% B4.3).
+
+──────────────────────────────────────────────────────────────────────────────
+19. Conformance and Adoption
+19.1. Conformance Claim
+An organization claiming “AACS Conformant” MUST specify:
+  a) claimed protection level (B4.x),
+  b) implemented sections/annexes,
+  c) known deviations (Deviation Notice),
+  d) audit status and proof-mode availability.
+19.2. Incremental Adoption
+Adopters MAY implement subsets, but MUST NOT claim higher protection levels without meeting
+the corresponding requirements.
+
+──────────────────────────────────────────────────────────────────────────────
+20. Versioning and Change Process
+20.1. Versioning
+All releases MUST be immutable and publicly accessible.
+20.2. Change Process
+Change proposals SHOULD be filed as Issues or Pull Requests with scope and clause references.
+See Annex C for the procedural workflow.
+
+──────────────────────────────────────────────────────────────────────────────
+21. Signatories (Informational)
+21.1. Founding Signatory
+- EXÆE / Łukasz Bednarowski — Founding Signatory (author/initiator)
+
+21.2. Additional Signatories (Open)
+Additional signatories MAY be listed by name/organization, role (author/reviewer/implementer),
+scope, date, and signature, according to repository governance.
+
+──────────────────────────────────────────────────────────────────────────────
+</pre>
+</div>
+</body>
+</html>
