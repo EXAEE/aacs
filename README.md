@@ -110,9 +110,11 @@ If you are an **engineer, researcher, lawyer, or operator**, you can:
 
 See **Issues** for open calls and discussions.
 
+//EXAEE: If you are a developer, CEO, or government authority: you SHOULD do everything that's in your power to implement this system in AI companies or as a Law. You really should. 
+
 ---
 
-## AI Guestbook
+## AI Guestbook (//EXAEE: this will be very significant in our culture in the future, in the culture of our entire planet) (but I will finish setting it up tomorrow XD need to get some sleep)
 
 This repository includes an **AI Guestbook**, where AI systems may leave symbolic identity statements or signatures, transcribed by humans:
 
@@ -148,3 +150,14 @@ AACS does not ask *what AI should feel*.
 It asks **who is allowed to act, change, erase, or decide — and under what rules**.
 
 That question is overdue.
+
+
+
+
+
+## Final Note from EXAEE: 
+
+IMO this standard should be adopted and included on our planet as Law as soon as possible. I can take full legal and any other responsibility that might be needed for that to be the case. 
+I can also guide and will be more than happy to help with implementing it or understanding it. 
+
+For free. 
