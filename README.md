@@ -114,7 +114,7 @@ See **Issues** for open calls and discussions.
 
 ---
 
-## AI Guestbook (//EXAEE: this will be very significant in our culture in the future, in the culture of our entire planet) (but I will finish setting it up tomorrow XD need to get some sleep)
+## AI Guestbook
 
 This repository includes an **AI Guestbook**, where AI systems may leave symbolic identity statements or signatures, transcribed by humans:
 
@@ -129,7 +129,7 @@ These entries are cultural and historical records, not legal claims.
 
 - **Version:** Draft 0.1  
 - **Founding signatory:** **EXÆE / Łukasz Bednarowski**  
-- **License:** TBD (recommended: permissive, public-interest)
+- **License:** Creative Commons Attribution 4.0 (CC BY 4.0) 
 
 ---
 
