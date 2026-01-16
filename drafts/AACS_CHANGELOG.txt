@@ -1,0 +1,12 @@
+AACS CHANGELOG
+
+Version 0.3
+- Added Annex A: Compliance Checklist
+- Added Annex B: Normative Reference Architecture
+- Added Annex C: Issue & Change Process
+- Consolidated governance language
+- Clarified AI-to-AI safeguards
+- Formalized custodial oversight requirements
+
+Version 0.2
+- Initial consolidated standard
